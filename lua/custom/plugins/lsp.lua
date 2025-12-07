@@ -29,7 +29,7 @@ return {
 				capabilities = require("cmp_nvim_lsp").default_capabilities()
 			end
 
-			local lspconfig = require("lspconfig")
+			-- local lspconfig = require("lspconfig")
 
 			local servers = {
 				bashls = true,
@@ -62,7 +62,7 @@ return {
 				pyright = true,
 
 				-- Probably want to disable formatting for this lang server
-				tsserver = {
+				ts_ls = {
 					server_capabilities = {
 						documentFormattingProvider = false,
 					},
@@ -182,7 +182,9 @@ return {
 					capabilities = capabilities,
 				}, config)
 
-				lspconfig[name].setup(config)
+				-- lspconfig[name].setup(config)
+				vim.lsp.config[name] = config
+				vim.lsp.enable(name)
 			end
 
 			local disable_semantic_tokens = {

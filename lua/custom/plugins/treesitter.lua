@@ -4,9 +4,10 @@
 return {
   {
     "nvim-treesitter/nvim-treesitter",
-    dependencies = {
-      { dir = "~/plugins/tree-sitter-lua" },
-    },
+    -- dependencies = {
+    --   { dir = "~/plugins/tree-sitter-lua" },
+    -- },
+    ensure_installed = { "lua" },
     build = ":TSUpdate",
     branch = "main",
     lazy = false,

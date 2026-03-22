@@ -49,10 +49,11 @@ This config provides a full-featured Neovim setup with:
 ### Language Support
 Supports 20+ languages including:
 - Go (gopls, delve debugger)
-- Rust (rust-analyzer, rustfmt)
+- Rust (rust-analyzer with cargo features enabled, rustfmt)
 - Python (pyright, black, isort)
 - JavaScript/TypeScript (ts_ls, prettier)
 - Lua (lua_ls, stylua)
+- Emmet (emmet_language_server for HTML, CSS, JS, TS, React, Vue, Rust)
 - And more (see `lua/custom/plugins/lsp.lua`)
 
 ## Key Features

@@ -53,7 +53,15 @@ return {
 						semanticTokensProvider = vim.NIL,
 					},
 				},
-				rust_analyzer = true,
+				rust_analyzer = {
+					settings = {
+						["rust-analyzer"] = {
+							cargo = {
+								features = "all", -- Enable all features
+							},
+						},
+  					},
+				},
 				svelte = true,
 				templ = true,
 				cssls = true,
@@ -152,6 +160,10 @@ return {
 
 					filetypes = { "c" },
 				},
+
+				emmet_language_server = {
+					filetypes = { "html", "css", "javascript", "typescript", "javascriptreact", "typescriptreact", "vue", "rust" },
+				}
 			}
 
 			local servers_to_install = vim.tbl_filter(function(key)
@@ -168,6 +180,7 @@ return {
 				"stylua",
 				"lua_ls",
 				"delve",
+				"emmet_language_server",
 				-- "tailwind-language-server",
 			}
 
